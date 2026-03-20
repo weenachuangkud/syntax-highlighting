@@ -4,7 +4,12 @@
     <!ENTITY instruction_symbols "~!=-:,">
     <!ENTITY expression_symbols "+-*/:&lt;&gt;">
 ]>
-<language name="PIO Assembler" section="Assembler" extensions="*.pio" version="1" kateversion="5.79">
+<!--
+    SPDX-FileCopyrightText: 2026 Dale Cook <cook.dale.e@gmail.com>
+    SPDX-License-Identifier: MIT
+-->
+
+<language name="PIO Assembler" section="Assembler" extensions="*.pio" version="1" kateversion="5.79" author="Dale Cook (cook.dale.e@gmail.com)" license="MIT">
 <highlighting>
     <list name="Directives">
         <item>.define</item>
