@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: syntaxhighlighting5_qt\n"
-"PO-Revision-Date: 2026-01-26 13:21+0200\n"
+"PO-Revision-Date: 2026-03-22 23:03+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -976,12 +976,9 @@ msgctxt "Language|"
 msgid "Pike"
 msgstr "Pike"
 
-#, fuzzy
-#| msgctxt "Language Section|"
-#| msgid "Assembler"
 msgctxt "Language|"
 msgid "PIO Assembler"
-msgstr "Асемблер"
+msgstr "Асемблер PIO"
 
 msgctxt "Language|"
 msgid "PL/I"
