@@ -1,0 +1,15 @@
+<!DOCTYPE language>
+<language name="Meson" section="Other"
+          version="5" kateversion="5.0"
+          extensions="meson.build;meson_options.txt"
+          mimetype="text/x-meson"
+          priority="5"
+          license="LGPL">
+
+	<general>
+		<comments>
+			<comment name="singleLine" start="#"/>
+		</comments>
+	</general>
+</language>
+<!-- kate: replace-tabs off; -->
