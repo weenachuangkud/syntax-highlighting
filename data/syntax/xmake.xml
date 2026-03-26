@@ -1,14 +1,65 @@
+<!--
+	SPDX-FileCopyrightText: 2026 Mawin Chuangkud weena.chuangkud@gmail.com
+	SPDX-License-Identifier: MIT
+-->
+
 <!DOCTYPE language>
-<language name="Meson" section="Other"
-          version="5" kateversion="5.0"
-          extensions="meson.build;meson_options.txt"
-          mimetype="text/x-meson"
+<language name="Xmake" section="Other"
+          version="1" kateversion="5.0"
+          extensions="xmake.lua;*.xmake.lua"
+          mimetype="text/x-xmake"
           priority="5"
-          license="LGPL">
+          license="MIT">
+
+	<highlighting>
+		<list name="keywords">
+			<item>target</item>
+			<item>add_files</item>
+			<item>set_kind</item>
+			<item>add_deps</item>
+			<item>add_packages</item>
+			<item>add_includedirs</item>
+			<item>add_links</item>
+			<item>add_linkdirs</item>
+			<item>add_defines</item>
+			<item>set_targetdir</item>
+			<item>set_objectdir</item>
+			<item>add_cflags</item>
+			<item>add_cxxflags</item>
+			<item>add_ldflags</item>
+			<item>set_languages</item>
+			<item>add_rules</item>
+			<item>set_default</item>
+			<item>set_enabled</item>
+			<item>set_project</item>
+			<item>set_version</item>
+			<item>set_xmakever</item>
+			<item>add_requires</item>
+			<item>add_requireconfs</item>
+			<item>includes</item>
+			<item>option</item>
+			<item>rule</item>
+			<item>task</item>
+			<item>package</item>
+			<item>namespace</item>
+		</list>
+
+		<contexts>
+			<context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+				<keyword attribute="Keyword" String="keywords" context="#stay"/>
+				<IncludeRules context="##Lua"/>
+			</context>
+		</contexts>
+
+		<itemDatas>
+			<itemData name="Keyword" defStyleNum="dsBuiltIn" spellChecking="false"/>
+		</itemDatas>
+	</highlighting>
+
 
 	<general>
 		<comments>
-			<comment name="singleLine" start="#"/>
+			<comment name="doublelines" start="--"/>
 		</comments>
 	</general>
 </language>
