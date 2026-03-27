@@ -79,10 +79,30 @@
 		</list>
 
 		<list name="builtinVariables">
+			<!-- https://gn.googlesource.com/gn/+/refs/heads/main/docs/reference.md#other-help-topics-gn-file-back-to-top-variables -->
+			<item>arg_file_template</item>
+			<item>buildconfig</item>
+			<item>check_targets</item>
+			<item>no_check_targets</item>
+			<item>check_system_includes</item>
+			<item>exec_script_allowlist</item>
+			<item>exec_script_whitelist</item>
+			<item>export_compile_commands</item>
+			<item>root</item>
+			<item>root_patterns</item>
+			<item>script_executable</item>
+			<item>secondary_source</item>
+			<item>default_args</item>
+			<item>build_file_extension</item>
+			<item>ninja_required_version</item>
+			<item>no_stamp_files</item>
+
+			<!-- https://gn.googlesource.com/gn/+/refs/heads/main/docs/reference.md#predefined_variables -->
 			<item>current_cpu</item>
 			<item>current_os</item>
 			<item>current_toolchain</item>
 			<item>default_toolchain</item>
+			<item>gn_version</item>
 			<item>host_cpu</item>
 			<item>host_os</item>
 			<item>invoker</item>
