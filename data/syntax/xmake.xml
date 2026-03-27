@@ -1,66 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
-	SPDX-FileCopyrightText: 2026 Mawin Chuangkud weena.chuangkud@gmail.com
-	SPDX-License-Identifier: MIT
+SPDX-FileCopyrightText: 2026 Mawin Chuangkud weena.chuangkud@gmail.com
+SPDX-License-Identifier: MIT
 -->
-
 <!DOCTYPE language>
 <language name="Xmake" section="Other"
-          version="1" kateversion="5.0"
-          extensions="xmake.lua;*.xmake.lua"
-          mimetype="text/x-xmake"
-          priority="5"
-          license="MIT">
+	version="1" kateversion="5.0"
+	extensions="xmake.lua;*.xmake.lua"
+	mimetype="text/x-xmake"
+	priority="5"
+	license="MIT">
 
 	<highlighting>
-		<list name="keywords">
+
+		<list name="flowControl">
+			<item>if</item>
+			<item>else</item>
+			<item>elseif</item>
+			<item>end</item>
+			<item>for</item>
+			<item>in</item>
+			<item>while</item>
+			<item>do</item>
+			<item>repeat</item>
+			<item>until</item>
+			<item>return</item>
+			<item>break</item>
+			<item>goto</item>
+			<item>local</item>
+			<item>function</item>
+			<item>then</item>
+		</list>
+
+		<!-- xmake global/project-level functions
+			Sources:
+			- https://xmake.io/api/description/global-interfaces.html
+			- https://xmake.io/api/description/global-interfaces.html
+			- https://xmake.io/api/description/conditions.html
+			- https://xmake.io/api/description/project-target.html
+			- https://xmake.io/api/description/plugin-and-task.html
+		-->
+		<list name="builtinfuncs">
+			<!-- Scope openers -->
 			<item>target</item>
-			<item>add_files</item>
-			<item>set_kind</item>
-			<item>add_deps</item>
-			<item>add_packages</item>
-			<item>add_includedirs</item>
-			<item>add_links</item>
-			<item>add_linkdirs</item>
-			<item>add_defines</item>
-			<item>set_targetdir</item>
-			<item>set_objectdir</item>
-			<item>add_cflags</item>
-			<item>add_cxxflags</item>
-			<item>add_ldflags</item>
-			<item>set_languages</item>
-			<item>add_rules</item>
-			<item>set_default</item>
-			<item>set_enabled</item>
-			<item>set_project</item>
-			<item>set_version</item>
-			<item>set_xmakever</item>
-			<item>add_requires</item>
-			<item>add_requireconfs</item>
-			<item>includes</item>
+			<item>target_end</item>
 			<item>option</item>
+			<item>option_end</item>
 			<item>rule</item>
 			<item>task</item>
 			<item>package</item>
 			<item>namespace</item>
+			<!-- Global/project interfaces -->
+			<item>set_project</item>
+			<item>set_version</item>
+			<item>set_xmakever</item>
+			<item>includes</item>
+			<item>add_requires</item>
+			<item>add_requireconfs</item>
+			<item>add_repositories</item>
+			<item>add_moduledirs</item>
+			<item>add_plugindirs</item>
+			<item>add_packagedirs</item>
+			<item>get_config</item>
+			<item>set_config</item>
+			<item>task_end</item>
+			<item>rule_end</item>
+			<item>package_end</item>
+			<!-- Condition functions -->
+			<item>is_os</item>
+			<item>is_arch</item>
+			<item>is_plat</item>
+			<item>is_host</item>
+			<item>is_subhost</item>
+			<item>is_subarch</item>
+			<item>is_cross</item>
+			<item>is_mode</item>
+			<item>is_kind</item>
+			<item>is_config</item>
+			<item>has_config</item>
+			<item>has_package</item>
+		</list>
+
+		<list name="logicalOperations">
+			<item>and</item>
+			<item>or</item>
+			<item>not</item>
+		</list>
+
+		<list name="booleans">
+			<item>true</item>
+			<item>false</item>
+			<item>nil</item>
+		</list>
+
+		<!--
+		xmake scope-opening objects that can be followed by member calls
+		- Source: https://xmake.io/api/description/project-target.html
+		-->
+		<list name="xmakeObjet">
+			<item>target</item>
+			<item>option</item>
+			<item>rule</item>
+			<item>task</item>
+			<item>package</item>
+		</list>
+
+		<!-- Target / option / rule description-scope member functions.
+			- https://xmake.io/api/description/project-target.html
+			- https://xmake.io/guide/project-configuration/configure-targets.html
+			- https://xmake.io/api/description/global-interfaces.html
+			- https://xmake.io/api/description/project-target.html
+		-->
+		<list name="xmakeMembers">
+			<!-- kind / strip / enable / default -->
+			<item>set_kind</item>
+			<item>set_strip</item>
+			<item>set_enabled</item>
+			<item>set_default</item>
+			<item>set_options</item>
+			<!-- naming -->
+			<item>set_basename</item>
+			<item>set_filename</item>
+			<item>set_prefixname</item>
+			<item>set_suffixname</item>
+			<item>set_extension</item>
+			<item>set_targetdir</item>
+			<item>set_objectdir</item>
+			<!-- compilation options -->
+			<item>set_symbols</item>
+			<item>set_warnings</item>
+			<item>set_optimize</item>
+			<item>set_languages</item>
+			<item>set_fpmodels</item>
+			<item>set_pcheader</item>
+			<item>set_pcxxheader</item>
+			<item>set_encodings</item>
+			<!-- toolchain / runtime -->
+			<item>set_toolset</item>
+			<item>set_runtimes</item>
+			<item>set_group</item>
+			<!-- project/version (also valid inside target scope) -->
+			<item>set_project</item>
+			<item>set_version</item>
+			<item>set_xmakever</item>
+			<!-- global default/allowed platform+arch+mode -->
+			<item>set_defaultplat</item>
+			<item>set_defaultarchs</item>
+			<item>set_defaultmode</item>
+			<item>set_allowedplats</item>
+			<item>set_allowedarchs</item>
+			<item>set_allowedmodes</item>
+			<!-- add_* -->
+			<item>add_files</item>
+			<item>add_deps</item>
+			<item>add_packages</item>
+			<item>add_includedirs</item>
+			<item>add_links</item>
+			<item>add_syslinks</item>
+			<item>add_linkdirs</item>
+			<item>add_rpathdirs</item>
+			<item>add_defines</item>
+			<item>add_cflags</item>
+			<item>add_cxxflags</item>
+			<item>add_cxflags</item>
+			<item>add_ldflags</item>
+			<item>add_asflags</item>
+			<item>add_scflags</item>
+			<item>add_rules</item>
+			<item>add_headerfiles</item>
+			<item>add_installfiles</item>
+			<item>add_configfiles</item>
+			<item>add_frameworks</item>
+			<item>add_frameworkdirs</item>
+			<item>add_vectorexts</item>
+			<item>add_tests</item>
+			<item>add_requires</item>
+			<item>add_requireconfs</item>
+			<item>add_repositories</item>
+			<item>includes</item>
+			<item>add_cincludes</item>
+			<item>add_cxxincludes</item>
+			<item>add_ctypes</item>
+			<item>add_cxxtypes</item>
+			<item>add_cfuncs</item>
+			<item>add_cxxfuncs</item>
+			<!-- lifecycle callbacks -->
+			<item>on_load</item>
+			<item>on_config</item>
+			<item>on_build</item>
+			<item>on_build_file</item>
+			<item>on_build_files</item>
+			<item>on_clean</item>
+			<item>on_install</item>
+			<item>on_uninstall</item>
+			<item>on_run</item>
+			<item>on_check</item>
+			<item>on_link</item>
+			<item>on_package</item>
+			<item>on_buildcmd_file</item>
+			<item>on_buildcmd_files</item>
+			<item>before_buildcmd_file</item>
+			<item>before_buildcmd_files</item>
+			<item>after_buildcmd_file</item>
+			<item>after_buildcmd_files</item>
+			<item>add_imports</item>
+			<item>before_build</item>
+			<item>before_build_file</item>
+			<item>before_build_files</item>
+			<item>before_install</item>
+			<item>before_uninstall</item>
+			<item>before_run</item>
+			<item>after_build</item>
+			<item>after_build_file</item>
+			<item>after_build_files</item>
+			<item>after_install</item>
+			<item>after_uninstall</item>
+			<item>after_check</item>
+			<item>after_run</item>
+			<item>before_check</item>
+			<!-- task-specific -->
+			<item>set_menu</item>
+			<item>set_category</item>
+			<item>set_description</item>
+			<!-- option-specific -->
+			<item>set_showmenu</item>
+			<item>set_values</item>
+			<!-- rule-specific -->
+			<item>set_extensions</item>
+		</list>
+
+		<!--
+		Generic target instance members (used in script scope via target:xxx())
+		- Source: https://xmake.io/api/scripts/target-instance.html
+		-->
+		<list name="builtinmembers">
+			<item>name</item>
+			<item>kind</item>
+			<item>targetfile</item>
+			<item>targetdir</item>
+			<item>deps</item>
+			<item>packages</item>
+			<item>sourcefiles</item>
+			<item>headerfiles</item>
+			<item>get</item>
+			<item>set</item>
+			<item>add</item>
+			<item>rule</item>
+			<item>rule_add</item>
+			<item>is_plat</item>
+			<item>is_arch</item>
+			<item>is_mode</item>
+			<item>is_kind</item>
+			<item>has_config</item>
+			<item>get_config</item>
+			<item>set_config</item>
+			<item>has_cfuncs</item>
+			<item>has_cxxfuncs</item>
+			<item>has_ctypes</item>
+			<item>has_cxxtypes</item>
+			<item>has_cincludes</item>
+			<item>has_cxxincludes</item>
+			<item>has_cflags</item>
+			<item>has_cxxflags</item>
 		</list>
 
 		<contexts>
 			<context name="Normal" attribute="Normal Text" lineEndContext="#stay">
-				<keyword attribute="Keyword" String="keywords" context="#stay"/>
-				<IncludeRules context="##Lua"/>
+				<keyword attribute="Flow Control Keyword" String="flowControl" context="#stay" />
+				<keyword attribute="Operator" String="logicalOperations" context="#stay" />
+				<keyword attribute="Builtin Function" String="builtinfuncs" context="#stay" />
+				<keyword attribute="Boolean Values" String="booleans" context="#stay" />
+				<keyword attribute="Builtin Objet" String="xmakeObjet" context="xmakeObjet" />
+				<Int attribute="Int" context="#stay" />
+				<StringDetect attribute="Comment" String="--" context="comment" />
+				<AnyChar attribute="Operator" String="+-*/=&lt;&gt;~^#%" context="#stay" />
+				<DetectChar attribute="Normal Text" char="{" context="Table" beginRegion="Table" />
+				<IncludeRules context="StringVariants" />
+				<DetectChar attribute="Normal Text" char="." context="members" />
+			</context>
+
+			<context name="xmakeObjet" attribute="Normal Text" lineEndContext="#pop" fallthrough="1"
+				fallthroughContext="#pop">
+				<DetectChar attribute="Normal Text" char="." context="xmakeMembers" />
+				<DetectChar attribute="Normal Text" char="(" context="#pop" />
+			</context>
+
+			<context name="xmakeMembers" attribute="Normal Text" lineEndContext="#pop#pop"
+				fallthrough="1" fallthroughContext="#pop#pop">
+				<keyword attribute="Builtin Function" String="xmakeMembers" context="#pop#pop" />
+			</context>
+
+			<context name="members" attribute="Normal Text" lineEndContext="#pop" fallthrough="1"
+				fallthroughContext="#pop#pop">
+				<keyword attribute="Builtin Member Function" String="builtinmembers" context="#pop" />
+			</context>
+
+			<context name="Table" attribute="Normal Text" lineEndContext="#stay"
+				noIndentationBasedFolding="true">
+				<DetectSpaces />
+				<DetectChar attribute="Normal Text" char="}" context="#pop" endRegion="Table" />
+				<IncludeRules context="Normal" />
+			</context>
+
+			<context name="comment" attribute="Comment" lineEndContext="#pop">
+				<IncludeRules context="##Comments" />
+			</context>
+
+			<!-- Lua supports three string delimiters:
+	'single', "double", and [[long brackets]]
+	Source: https://www.lua.org/manual/5.4/manual.html#3.1 -->
+			<context name="StringVariants" attribute="Normal Text" lineEndContext="#stay">
+				<DetectSpaces />
+				<StringDetect attribute="String" String="[[" context="Long String"
+					beginRegion="Long String" />
+				<DetectChar attribute="String" char="&quot;" context="Double String" />
+				<DetectChar attribute="String" char="'" context="Single String" />
+			</context>
+
+			<context name="Single String" attribute="String" lineEndContext="#stay">
+				<HlCStringChar attribute="String Char" context="#stay" />
+				<DetectChar attribute="String" char="'" context="#pop" />
+			</context>
+
+			<context name="Double String" attribute="String" lineEndContext="#stay">
+				<HlCStringChar attribute="String Char" context="#stay" />
+				<DetectChar attribute="String" char="&quot;" context="#pop" />
+			</context>
+
+			<context name="Long String" attribute="String" lineEndContext="#stay"
+				noIndentationBasedFolding="true">
+				<StringDetect attribute="String" String="]]" context="#pop" endRegion="Long String" />
 			</context>
 		</contexts>
 
 		<itemDatas>
-			<itemData name="Keyword" defStyleNum="dsBuiltIn" spellChecking="false"/>
+			<itemData name="Normal Text" defStyleNum="dsNormal" spellChecking="false" />
+			<itemData name="Operator" defStyleNum="dsNormal" spellChecking="false" bold="1" />
+			<itemData name="Int" defStyleNum="dsDecVal" spellChecking="false" />
+			<itemData name="Flow Control Keyword" defStyleNum="dsKeyword" spellChecking="false" />
+			<itemData name="Builtin Function" defStyleNum="dsDataType" spellChecking="false" />
+			<itemData name="Builtin Objet" defStyleNum="dsDataType" spellChecking="false" />
+			<itemData name="Builtin Member Function" defStyleNum="dsDataType" spellChecking="false" />
+			<itemData name="Boolean Values" defStyleNum="dsKeyword" spellChecking="false" />
+			<itemData name="String Char" defStyleNum="dsChar" spellChecking="false" />
+			<itemData name="String" defStyleNum="dsString" />
+			<itemData name="Comment" defStyleNum="dsComment" />
 		</itemDatas>
 	</highlighting>
 
-
 	<general>
 		<comments>
-			<comment name="doublelines" start="--"/>
+			<comment name="singleLine" start="--" />
 		</comments>
 	</general>
+
 </language>
 <!-- kate: replace-tabs off; -->
