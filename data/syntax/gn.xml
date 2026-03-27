@@ -120,6 +120,7 @@
 		<contexts>
 			<context name="Normal" attribute="Normal Text" lineEndContext="#stay">
 				<DetectSpaces/>
+				<RegExpr attribute="Property" String="[a-zA-Z_][a-zA-Z0-9_]*(?=\s*[+\-]?=(?!=))" context="#stay"/>
 				<keyword attribute="Control Flow" String="controlFlow" context="#stay"/>
 				<keyword attribute="Boolean" String="booleans" context="#stay"/>
 				<keyword attribute="Target Function" String="targetFunctions" context="#stay"/>
@@ -169,6 +170,7 @@
 
 		<itemDatas>
 			<itemData name="Normal Text"       defStyleNum="dsNormal"       spellChecking="false"/>
+			<itemData name="Property"          defStyleNum="dsDataType"     spellChecking="false"/>
 			<itemData name="Control Flow"      defStyleNum="dsControlFlow"  spellChecking="false"/>
 			<itemData name="Boolean"           defStyleNum="dsConstant"     spellChecking="false"/>
 			<itemData name="Target Function"   defStyleNum="dsFunction"     spellChecking="false"/>
