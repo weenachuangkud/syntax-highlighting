@@ -974,7 +974,7 @@ msgstr "Pike"
 
 msgctxt "Language|"
 msgid "PIO Assembler"
-msgstr ""
+msgstr "PIO 汇编"
 
 msgctxt "Language|"
 msgid "PL/I"
