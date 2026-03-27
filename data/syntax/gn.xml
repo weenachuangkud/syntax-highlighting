@@ -6,166 +6,160 @@
   https://gn.googlesource.com/gn/+/main/docs/reference.md
 -->
 <language name="GN"
-          section="Other"
-          version="1"
-          kateversion="5.0"
-          extensions="*.gn;*.gni;.gn"
-          mimetype="text/x-gn"
-          priority="5"
-          license="MIT"
-          author="BogDan Vatra (bogdan@kde.org)">
+		section="Other"
+		version="1"
+		kateversion="5.0"
+		extensions="*.gn;*.gni;.gn"
+		mimetype="text/x-gn"
+		priority="5"
+		license="MIT"
+		author="BogDan Vatra (bogdan@kde.org)">
+	<highlighting>
+		<list name="controlFlow">
+			<item>if</item>
+			<item>else</item>
+			<item>foreach</item>
+		</list>
 
-  <highlighting>
+		<list name="booleans">
+			<item>true</item>
+			<item>false</item>
+		</list>
 
-    <list name="controlFlow">
-      <item>if</item>
-      <item>else</item>
-      <item>foreach</item>
-    </list>
+		<list name="targetFunctions">
+			<item>action</item>
+			<item>action_foreach</item>
+			<item>bundle_data</item>
+			<item>config</item>
+			<item>copy</item>
+			<item>executable</item>
+			<item>generated_file</item>
+			<item>group</item>
+			<item>loadable_module</item>
+			<item>rust_library</item>
+			<item>rust_proc_macro</item>
+			<item>shared_library</item>
+			<item>source_set</item>
+			<item>static_library</item>
+			<item>target</item>
+			<item>pool</item>
+			<item>toolchain</item>
+		</list>
 
-    <list name="booleans">
-      <item>true</item>
-      <item>false</item>
-    </list>
+		<list name="builtinFunctions">
+			<item>assert</item>
+			<item>declare_args</item>
+			<item>defined</item>
+			<item>exec_script</item>
+			<item>filter_exclude</item>
+			<item>filter_include</item>
+			<item>forward_variables_from</item>
+			<item>get_label_info</item>
+			<item>get_path_info</item>
+			<item>get_target_outputs</item>
+			<item>getenv</item>
+			<item>import</item>
+			<item>mark_used</item>
+			<item>mark_used_from</item>
+			<item>not_needed</item>
+			<item>print</item>
+			<item>process_file_template</item>
+			<item>propagates_configs</item>
+			<item>read_file</item>
+			<item>rebase_path</item>
+			<item>set_default_toolchain</item>
+			<item>set_defaults</item>
+			<item>split_list</item>
+			<item>string_join</item>
+			<item>string_replace</item>
+			<item>string_split</item>
+			<item>template</item>
+			<item>tool</item>
+			<item>write_file</item>
+		</list>
 
-    <list name="targetFunctions">
-      <item>action</item>
-      <item>action_foreach</item>
-      <item>bundle_data</item>
-      <item>config</item>
-      <item>copy</item>
-      <item>executable</item>
-      <item>generated_file</item>
-      <item>group</item>
-      <item>loadable_module</item>
-      <item>rust_library</item>
-      <item>rust_proc_macro</item>
-      <item>shared_library</item>
-      <item>source_set</item>
-      <item>static_library</item>
-      <item>target</item>
-      <item>pool</item>
-      <item>toolchain</item>
-    </list>
+		<list name="builtinVariables">
+			<item>current_cpu</item>
+			<item>current_os</item>
+			<item>current_toolchain</item>
+			<item>default_toolchain</item>
+			<item>host_cpu</item>
+			<item>host_os</item>
+			<item>invoker</item>
+			<item>python_path</item>
+			<item>root_build_dir</item>
+			<item>root_gen_dir</item>
+			<item>root_out_dir</item>
+			<item>target_cpu</item>
+			<item>target_gen_dir</item>
+			<item>target_name</item>
+			<item>target_os</item>
+			<item>target_out_dir</item>
+		</list>
 
-    <list name="builtinFunctions">
-      <item>assert</item>
-      <item>declare_args</item>
-      <item>defined</item>
-      <item>exec_script</item>
-      <item>filter_exclude</item>
-      <item>filter_include</item>
-      <item>forward_variables_from</item>
-      <item>get_label_info</item>
-      <item>get_path_info</item>
-      <item>get_target_outputs</item>
-      <item>getenv</item>
-      <item>import</item>
-      <item>mark_used</item>
-      <item>mark_used_from</item>
-      <item>not_needed</item>
-      <item>print</item>
-      <item>process_file_template</item>
-      <item>propagates_configs</item>
-      <item>read_file</item>
-      <item>rebase_path</item>
-      <item>set_default_toolchain</item>
-      <item>set_defaults</item>
-      <item>split_list</item>
-      <item>string_join</item>
-      <item>string_replace</item>
-      <item>string_split</item>
-      <item>template</item>
-      <item>tool</item>
-      <item>write_file</item>
-    </list>
+		<contexts>
+			<context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+				<DetectSpaces/>
+				<keyword attribute="Control Flow" String="controlFlow" context="#stay"/>
+				<keyword attribute="Boolean" String="booleans" context="#stay"/>
+				<keyword attribute="Target Function" String="targetFunctions" context="#stay"/>
+				<keyword attribute="Builtin Function" String="builtinFunctions" context="#stay"/>
+				<keyword attribute="Builtin Variable" String="builtinVariables" context="#stay"/>
+				<Int attribute="Integer" context="#stay"/>
+				<DetectChar attribute="Comment" char="#" context="Comment"/>
+				<DetectChar attribute="String" char="&quot;" context="String"/>
+				<DetectChar attribute="Normal Text" char="{" context="#stay" beginRegion="Block"/>
+				<DetectChar attribute="Normal Text" char="}" context="#stay" endRegion="Block"/>
+				<DetectChar attribute="Normal Text" char="[" context="List" beginRegion="List"/>
+				<Detect2Chars attribute="Operator" char="&amp;" char1="&amp;" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="|" char1="|" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="=" char1="=" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="!" char1="=" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="&lt;" char1="=" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="&gt;" char1="=" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="+" char1="=" context="#stay"/>
+				<Detect2Chars attribute="Operator" char="-" char1="=" context="#stay"/>
+				<AnyChar attribute="Operator" String="=+-!&lt;&gt;" context="#stay"/>
+			</context>
 
-    <list name="builtinVariables">
-      <item>current_cpu</item>
-      <item>current_os</item>
-      <item>current_toolchain</item>
-      <item>default_toolchain</item>
-      <item>host_cpu</item>
-      <item>host_os</item>
-      <item>invoker</item>
-      <item>python_path</item>
-      <item>root_build_dir</item>
-      <item>root_gen_dir</item>
-      <item>root_out_dir</item>
-      <item>target_cpu</item>
-      <item>target_gen_dir</item>
-      <item>target_name</item>
-      <item>target_os</item>
-      <item>target_out_dir</item>
-    </list>
+			<context name="List" attribute="Normal Text" lineEndContext="#stay" noIndentationBasedFolding="true">
+				<DetectSpaces/>
+				<DetectChar attribute="Normal Text" char="]" context="#pop" endRegion="List"/>
+				<IncludeRules context="Normal"/>
+			</context>
 
-    <contexts>
+			<context name="Comment" attribute="Comment" lineEndContext="#pop">
+				<IncludeRules context="##Alerts"/>
+				<IncludeRules context="##Modelines"/>
+			</context>
 
-      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
-        <DetectSpaces/>
-        <keyword attribute="Control Flow" String="controlFlow" context="#stay"/>
-        <keyword attribute="Boolean" String="booleans" context="#stay"/>
-        <keyword attribute="Target Function" String="targetFunctions" context="#stay"/>
-        <keyword attribute="Builtin Function" String="builtinFunctions" context="#stay"/>
-        <keyword attribute="Builtin Variable" String="builtinVariables" context="#stay"/>
-        <Int attribute="Integer" context="#stay"/>
-        <DetectChar attribute="Comment" char="#" context="Comment"/>
-        <DetectChar attribute="String" char="&quot;" context="String"/>
-        <DetectChar attribute="Normal Text" char="{" context="#stay" beginRegion="Block"/>
-        <DetectChar attribute="Normal Text" char="}" context="#stay" endRegion="Block"/>
-        <DetectChar attribute="Normal Text" char="[" context="List" beginRegion="List"/>
-        <Detect2Chars attribute="Operator" char="&amp;" char1="&amp;" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="|" char1="|" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="=" char1="=" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="!" char1="=" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="&lt;" char1="=" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="&gt;" char1="=" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="+" char1="=" context="#stay"/>
-        <Detect2Chars attribute="Operator" char="-" char1="=" context="#stay"/>
-        <AnyChar attribute="Operator" String="=+-!&lt;&gt;" context="#stay"/>
-      </context>
+			<context name="String" attribute="String" lineEndContext="#pop">
+				<HlCStringChar attribute="Escape" context="#stay"/>
+				<Detect2Chars attribute="Escape" char="\" char1="$" context="#stay"/>
+				<Detect2Chars attribute="Interpolation" char="$" char1="{" context="Interpolation"/>
+				<RegExpr attribute="Interpolation" String="\$[a-zA-Z_][a-zA-Z0-9_]*" context="#stay"/>
+				<DetectChar attribute="String" char="&quot;" context="#pop"/>
+			</context>
 
-      <context name="List" attribute="Normal Text" lineEndContext="#stay" noIndentationBasedFolding="true">
-        <DetectSpaces/>
-        <DetectChar attribute="Normal Text" char="]" context="#pop" endRegion="List"/>
-        <IncludeRules context="Normal"/>
-      </context>
+			<context name="Interpolation" attribute="Normal Text" lineEndContext="#pop#pop">
+				<DetectSpaces/>
+				<DetectChar attribute="Interpolation" char="}" context="#pop"/>
+			</context>
+		</contexts>
 
-      <context name="Comment" attribute="Comment" lineEndContext="#pop">
-        <IncludeRules context="##Alerts"/>
-        <IncludeRules context="##Modelines"/>
-      </context>
-
-      <context name="String" attribute="String" lineEndContext="#pop">
-        <HlCStringChar attribute="Escape" context="#stay"/>
-        <Detect2Chars attribute="Escape" char="\" char1="$" context="#stay"/>
-        <Detect2Chars attribute="Interpolation" char="$" char1="{" context="Interpolation"/>
-        <RegExpr attribute="Interpolation" String="\$[a-zA-Z_][a-zA-Z0-9_]*" context="#stay"/>
-        <DetectChar attribute="String" char="&quot;" context="#pop"/>
-      </context>
-
-      <context name="Interpolation" attribute="Normal Text" lineEndContext="#pop#pop">
-        <DetectSpaces/>
-        <DetectChar attribute="Interpolation" char="}" context="#pop"/>
-      </context>
-
-    </contexts>
-
-    <itemDatas>
-      <itemData name="Normal Text"       defStyleNum="dsNormal"       spellChecking="false"/>
-      <itemData name="Control Flow"      defStyleNum="dsControlFlow"  spellChecking="false"/>
-      <itemData name="Boolean"           defStyleNum="dsConstant"     spellChecking="false"/>
-      <itemData name="Target Function"   defStyleNum="dsFunction"     spellChecking="false"/>
-      <itemData name="Builtin Function"  defStyleNum="dsBuiltIn"      spellChecking="false"/>
-      <itemData name="Builtin Variable"  defStyleNum="dsVariable"     spellChecking="false"/>
-      <itemData name="Integer"           defStyleNum="dsDecVal"       spellChecking="false"/>
-      <itemData name="Operator"          defStyleNum="dsOperator"     spellChecking="false"/>
-      <itemData name="String"            defStyleNum="dsString"/>
-      <itemData name="Escape"            defStyleNum="dsSpecialChar"  spellChecking="false"/>
-      <itemData name="Interpolation"     defStyleNum="dsSpecialString" spellChecking="false"/>
-      <itemData name="Comment"           defStyleNum="dsComment"/>
-    </itemDatas>
-
-  </highlighting>
-
+		<itemDatas>
+			<itemData name="Normal Text"       defStyleNum="dsNormal"       spellChecking="false"/>
+			<itemData name="Control Flow"      defStyleNum="dsControlFlow"  spellChecking="false"/>
+			<itemData name="Boolean"           defStyleNum="dsConstant"     spellChecking="false"/>
+			<itemData name="Target Function"   defStyleNum="dsFunction"     spellChecking="false"/>
+			<itemData name="Builtin Function"  defStyleNum="dsBuiltIn"      spellChecking="false"/>
+			<itemData name="Builtin Variable"  defStyleNum="dsVariable"     spellChecking="false"/>
+			<itemData name="Integer"           defStyleNum="dsDecVal"       spellChecking="false"/>
+			<itemData name="Operator"          defStyleNum="dsOperator"     spellChecking="false"/>
+			<itemData name="String"            defStyleNum="dsString"/>
+			<itemData name="Escape"            defStyleNum="dsSpecialChar"  spellChecking="false"/>
+			<itemData name="Interpolation"     defStyleNum="dsSpecialString" spellChecking="false"/>
+			<itemData name="Comment"           defStyleNum="dsComment"/>
+		</itemDatas>
+	</highlighting>
 </language>
