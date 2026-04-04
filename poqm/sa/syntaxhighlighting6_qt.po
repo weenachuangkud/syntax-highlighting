@@ -1262,6 +1262,10 @@ msgid "Stata"
 msgstr "आसीत्‌"
 
 msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
+msgctxt "Language|"
 msgid "STL"
 msgstr "एसटीएल"
 

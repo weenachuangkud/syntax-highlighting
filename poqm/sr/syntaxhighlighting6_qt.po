@@ -1305,6 +1305,10 @@ msgid "Stata"
 msgstr "стата"
 
 msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
+msgctxt "Language|"
 msgid "STL"
 msgstr "СТЛ"
 

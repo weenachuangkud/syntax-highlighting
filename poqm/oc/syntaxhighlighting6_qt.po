@@ -1413,6 +1413,10 @@ msgctxt "Language|"
 msgid "Stata"
 msgstr ""
 
+msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
 #, fuzzy
 #| msgctxt "Language"
 #| msgid "SQL"

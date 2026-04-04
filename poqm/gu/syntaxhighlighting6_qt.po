@@ -1733,6 +1733,10 @@ msgctxt "Language|"
 msgid "Stata"
 msgstr "સ્ટાટા"
 
+msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
 #, fuzzy
 #| msgctxt "Language"
 #| msgid "LSL"

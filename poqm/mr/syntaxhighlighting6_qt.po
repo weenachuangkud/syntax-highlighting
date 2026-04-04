@@ -1453,6 +1453,10 @@ msgctxt "Language|"
 msgid "Stata"
 msgstr "स्थैतिक"
 
+msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
 #, fuzzy
 #| msgctxt "Language"
 #| msgid "LSL"

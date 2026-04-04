@@ -1715,6 +1715,10 @@ msgctxt "Language|"
 msgid "Stata"
 msgstr "स्टाटा"
 
+msgctxt "Language|"
+msgid "STEP"
+msgstr ""
+
 #, fuzzy
 #| msgctxt "Language"
 #| msgid "GLSL"
