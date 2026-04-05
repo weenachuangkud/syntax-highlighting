@@ -569,6 +569,10 @@ msgid "Gnuplot"
 msgstr ""
 
 msgctxt "Language|"
+msgid "GN"
+msgstr ""
+
+msgctxt "Language|"
 msgid "Go"
 msgstr "ਗੋ"
 

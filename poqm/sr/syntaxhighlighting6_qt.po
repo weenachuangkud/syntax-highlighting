@@ -512,6 +512,10 @@ msgid "Gnuplot"
 msgstr "гнуплотски"
 
 msgctxt "Language|"
+msgid "GN"
+msgstr ""
+
+msgctxt "Language|"
 msgid "Go"
 msgstr "го"
 

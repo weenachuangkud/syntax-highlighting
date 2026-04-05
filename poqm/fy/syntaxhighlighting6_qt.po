@@ -677,6 +677,10 @@ msgctxt "Language|"
 msgid "Gnuplot"
 msgstr ""
 
+msgctxt "Language|"
+msgid "GN"
+msgstr ""
+
 #, fuzzy
 #| msgid "Go"
 msgctxt "Language|"

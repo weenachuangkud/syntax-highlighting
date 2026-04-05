@@ -478,6 +478,10 @@ msgid "Gnuplot"
 msgstr "Gnuplot"
 
 msgctxt "Language|"
+msgid "GN"
+msgstr ""
+
+msgctxt "Language|"
 msgid "Go"
 msgstr "Go"
 
@@ -1239,7 +1243,7 @@ msgstr "Stata"
 
 msgctxt "Language|"
 msgid "STEP"
-msgstr ""
+msgstr "STEP"
 
 msgctxt "Language|"
 msgid "STL"
