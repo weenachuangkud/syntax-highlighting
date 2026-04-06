@@ -479,7 +479,7 @@ msgstr "Gnuplot"
 
 msgctxt "Language|"
 msgid "GN"
-msgstr ""
+msgstr "გნ"
 
 msgctxt "Language|"
 msgid "Go"
