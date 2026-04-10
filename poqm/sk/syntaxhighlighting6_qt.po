@@ -36,7 +36,7 @@ msgstr "Jazyk E"
 
 msgctxt "Language|"
 msgid "ACPI DSL"
-msgstr ""
+msgstr "ACPI DSL"
 
 msgctxt "Language|"
 msgid "ActionScript 2.0"
@@ -152,15 +152,15 @@ msgstr "Cabal"
 
 msgctxt "Language|"
 msgid "Cap'n Proto"
-msgstr ""
+msgstr "Cap'n Proto"
 
 msgctxt "Language|"
 msgid "CartoCSS MML"
-msgstr ""
+msgstr "CartoCSS MML"
 
 msgctxt "Language|"
 msgid "CartoCSS MSS"
-msgstr ""
+msgstr "CartoCSS MSS"
 
 msgctxt "Language|"
 msgid "CashScript"
@@ -236,15 +236,15 @@ msgstr "CSS"
 
 msgctxt "Language|"
 msgid "CSV (pipe)"
-msgstr ""
+msgstr "CSV (pipe)"
 
 msgctxt "Language|"
 msgid "CSV (semicolon)"
-msgstr ""
+msgstr "CSV (semicolon)"
 
 msgctxt "Language|"
 msgid "CSV (whitespace)"
-msgstr ""
+msgstr "CSV (whitespace)"
 
 msgctxt "Language|"
 msgid "CSV"
@@ -320,7 +320,7 @@ msgstr "DTD"
 
 msgctxt "Language|"
 msgid "Devicetree Source (DTS)"
-msgstr ""
+msgstr "Devicetree Source (DTS)"
 
 msgctxt "Language|"
 msgid "D"
@@ -508,7 +508,7 @@ msgstr "Báječný"
 
 msgctxt "Language|"
 msgid "GTK Blueprint"
-msgstr ""
+msgstr "GTK Blueprint"
 
 msgctxt "Language|"
 msgid "Hamlet"
@@ -668,7 +668,7 @@ msgstr "k"
 
 msgctxt "Language|"
 msgid "LaTeX Log File"
-msgstr ""
+msgstr "LaTeX Log File"
 
 msgctxt "Language|"
 msgid "LaTeX"
@@ -712,19 +712,19 @@ msgstr "Logcat"
 
 msgctxt "Language|"
 msgid "Log File (advanced) Selector"
-msgstr ""
+msgstr "Log File (advanced) Selector"
 
 msgctxt "Language|"
 msgid "Log File (advanced)"
-msgstr ""
+msgstr "Log File (advanced)"
 
 msgctxt "Language|"
 msgid "Log File (simplified) Selector"
-msgstr ""
+msgstr "Log File (simplified) Selector"
 
 msgctxt "Language|"
 msgid "Log File (simplified)"
-msgstr ""
+msgstr "Log File (simplified)"
 
 msgctxt "Language|"
 msgid "Logtalk"
@@ -1312,7 +1312,7 @@ msgstr "Tiger"
 
 msgctxt "Language|"
 msgid "TLA+"
-msgstr ""
+msgstr "TLA+"
 
 msgctxt "Language|"
 msgid "TSV"
@@ -1400,7 +1400,7 @@ msgstr "Wayland Trace"
 
 msgctxt "Language|"
 msgid "Web Video Text Tracks"
-msgstr ""
+msgstr "Web Video Text Tracks"
 
 msgctxt "Language|"
 msgid "WINE Config"
@@ -1540,7 +1540,7 @@ msgstr "Svetlý vánok"
 
 msgctxt "Theme|"
 msgid "Catppuccin Frappé"
-msgstr ""
+msgstr "Catppuccin Frappé"
 
 msgctxt "Theme|"
 msgid "Catppuccin Latte"
@@ -1644,6 +1644,8 @@ msgid ""
 "The source file to highlight. If absent, read the file from stdin and the --"
 "syntax option must be used."
 msgstr ""
+"Zdrojový súbor na zvýraznenie. Ak chýba, súbor sa číta zo stdin a musí sa "
+"použiť voľba --syntax."
 
 #: cli/ksyntaxhighlighter.cpp:73
 msgctxt "SyntaxHighlightingCLI|"
@@ -1730,7 +1732,7 @@ msgstr "Zakázať ANSI pozadie pre predvolenú farbu."
 #: cli/ksyntaxhighlighter.cpp:115
 msgctxt "SyntaxHighlightingCLI|"
 msgid "Select background color role from theme."
-msgstr ""
+msgstr "Vybrať rolu farby pozadia z témy."
 
 #: cli/ksyntaxhighlighter.cpp:116
 msgctxt "SyntaxHighlightingCLI|"
@@ -1741,6 +1743,8 @@ msgstr "role"
 msgctxt "SyntaxHighlightingCLI|"
 msgid "For ansi and ansi256 formats, flush the output buffer on each line."
 msgstr ""
+"Pre formáty ansi a ansi256 vyprázdniť výstupnú vyrovnávaciu pamäť na každom "
+"riadku."
 
 #: cli/ksyntaxhighlighter.cpp:125
 msgctxt "SyntaxHighlightingCLI|"
